@@ -8,6 +8,7 @@ module Retailigence #:nodoc:
     # Initialize an object with the provided <tt>params</tt>. For the available
     # <tt>params</tt>, see the model's <tt>Attributes</tt>.
     def initialize(params = {})
+      params ||= {}
       params.each do |key, value|
         mapped_key = underscore(key)
         send("#{mapped_key}=".to_sym, value) if safe_attribute?(mapped_key)
